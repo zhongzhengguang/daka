@@ -1,61 +1,45 @@
 import Head from 'next/head';
 import Image from 'next/image';
-
-import styles from '@/styles/index.module.css';
-import styled from 'styled-components';
+import LOGO from '../public/LOGO.png';
+import googlelogo from '../public/googlelogo.png';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Home() {
+  const state = {
+    time: new Date(),
+  };
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="flex flex-col items-center h-screen text-center justify-end ">
+        <div className="h-[80%] bottom-0 flex flex-col justify-between">
+          <div className="space-y-3">
+            <Image src={LOGO} alt="/" className="mx-auto" />
+            <p className="textDarkBlue">
+              - 你今天
+              <span className="textBlue">打卡</span>了嗎 -
+            </p>
+          </div>
+          <div className="mx-auto">
+            <button
+              onClick={() => signIn()}
+              className="px-10 py-2 rounded-xl shadow-lg shadow-gray-400 cursor-pointer flex items-center justify-center space-x-3"
+            >
+              <Image src={googlelogo} alt="/" />
+              <p>使用 Google 帳號登入</p>
+            </button>
+          </div>
 
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/canary/examples" className={styles.card}>
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a href="https://vercel.com/new" className={styles.card}>
-            <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
+          <div className="textGray space-y-3 mb-5">
+            <p>powered by Kiitzu</p>
+            <p>© 2023 豈止數位設計有限公司 Kiitzu, Inc. All rights reserved.</p>
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      </div>
+    </>
   );
 }

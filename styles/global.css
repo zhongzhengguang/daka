@@ -1,53 +1,33 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  box-sizing: border-box;
-}
-
-main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-footer {
-  width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer img {
-  margin-left: 0.5rem;
-}
-
-footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
-    monospace;
+@layer components {
+  .textDarkBlue {
+    @apply text-[#223C52];
+  }
+  .textBlue {
+    @apply text-[#48A7EE];
+  }
+  .textBlack {
+    @apply text-[#414141];
+  }
+  .textGray {
+    @apply text-[#868A93];
+  }
+  .text {
+    @apply text-[#868A93] underline underline-offset-4;
+  }
+  .li {
+    @apply flex items-center ml-10 space-x-5;
+  }
+  .checkin {
+    @apply border rounded-2xl text-white px-20 py-5 bg-[#48A7EE];
+  }
+  .track {
+    @apply bg-[#F3F6F8] rounded-xl;
+  }
+  .trackLi {
+    @apply flex items-center space-x-5;
+  }
 }
