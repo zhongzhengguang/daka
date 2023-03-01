@@ -24,6 +24,9 @@
   .checkin {
     @apply border rounded-2xl text-white px-20 py-5 bg-[#48A7EE];
   }
+  .checkout {
+    @apply border rounded-2xl text-white px-20 py-5 bg-[#223C52];
+  }
   .track {
     @apply bg-[#F3F6F8] rounded-xl;
   }

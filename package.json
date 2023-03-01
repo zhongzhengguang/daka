@@ -13,6 +13,7 @@
     "cypress:production": "npm run build:test && start-server-and-test 'npm run start:test' 3000 'npx cypress open --config watchForFileChanges=false'"
   },
   "dependencies": {
+    "firebase": "^9.17.1",
     "moment": "^2.29.4",
     "moment-timer": "^1.3.0",
     "next": "latest",

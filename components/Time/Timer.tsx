@@ -7,18 +7,8 @@ function Timer() {
   const handlecheckIn = () => {
     setCheckInTime(currentTime);
   };
-  //   const workinrtime = currentTime - checkInTime;
 
-  return (
-    <div onClick={handlecheckIn} className="mt-10">
-      <div className=" textGray flex">
-        <p>您已工作 </p>
-        <span>0 小時</span>
-        <span>00 分鐘</span>
-      </div>
-      <div className="textGray">讀取條？？</div>
-    </div>
-  );
+  return <div onClick={handlecheckIn} className="mt-10"></div>;
 }
 
 export default Timer;
