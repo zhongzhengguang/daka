@@ -11,7 +11,6 @@ function check() {
       <Navbar />
       <Date />
       <WorkingTime />
-
       <p className="textGray flex justify-center mt-10">Kiitzu的小夥伴們</p>
       <Track />
     </div>

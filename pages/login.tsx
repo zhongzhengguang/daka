@@ -1,18 +1,12 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import LOGO from '../public/LOGO.png';
 import googlelogo from '../public/googlelogo.png';
 import { useSession, signIn, signOut } from 'next-auth/react';
-import { UserAuth } from 'hooks/userAuth';
+import { useRouter } from 'next/router';
 export default function Home() {
-  const { googleSignIn } = UserAuth();
-
+  const router = useRouter();
   const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn();
-    } catch (err) {
-      console.log(err);
-    }
+    router.push('/checkin');
   };
   return (
     <div className="flex flex-col items-center h-screen text-center justify-end ">
