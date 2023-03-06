@@ -5,6 +5,7 @@ import Date from '@/components/Time/Date';
 import Track from '@/components/TrackTable/Track';
 import WorkingTime from '@/components/Time/WorkingTime';
 import { UserData } from '../types';
+import Footer from '@/components/Footer/Footer';
 
 interface Props {
   userData: UserData;
@@ -21,6 +22,7 @@ export default function Home({ userData }: Props) {
       <WorkingTime />
       <p className="textGray flex justify-center mt-10">Kiitzu的小夥伴們</p>
       <Track users={userData.users} />
+      <Footer />
     </>
   );
 }

@@ -3,6 +3,7 @@ import LOGO from '../public/LOGO.png';
 import googlelogo from '../public/googlelogo.png';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import Footer from '@/components/Footer/Footer';
 export default function Home() {
   const router = useRouter();
   const session = useSession();
@@ -26,11 +27,7 @@ export default function Home() {
             <p>使用 Google 帳號登入</p>
           </button>
         </div>
-
-        <div className="textGray space-y-3 mb-5">
-          <p>powered by Kiitzu</p>
-          <p>© 2023 豈止數位設計有限公司 Kiitzu, Inc. All rights reserved.</p>
-        </div>
+        <Footer />
       </div>
     </div>
   );
