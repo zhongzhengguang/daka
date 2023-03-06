@@ -19,7 +19,7 @@
     @apply text-[#868A93] underline underline-offset-4;
   }
   .li {
-    @apply flex items-center ml-10 space-x-5;
+    @apply flex items-center ml-10 space-x-5 cursor-pointer;
   }
   .checkin {
     @apply border rounded-2xl text-white px-20 py-5 bg-[#48A7EE];
@@ -28,7 +28,7 @@
     @apply border rounded-2xl text-white px-20 py-5 bg-[#223C52];
   }
   .track {
-    @apply bg-[#F3F6F8] rounded-xl;
+    @apply bg-[#F3F6F8] rounded-xl space-y-5;
   }
   .trackLi {
     @apply flex items-center space-x-5;

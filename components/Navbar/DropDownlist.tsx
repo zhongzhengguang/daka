@@ -4,8 +4,11 @@ import personalLeave from '../../public/checkpage/personalLeave.png';
 import personalLeaveHistory from '../../public/checkpage/personalLeaveHistory.png';
 import onWorkHistory from '../../public/checkpage/onWorkHistory.png';
 import personalfile from '../../public/checkpage/personalfile.png';
-
+import { useRouter } from 'next/router';
+import { signOut } from 'next-auth/react';
 function DropDownlist() {
+  const router = useRouter();
+
   return (
     <div
       className="flex justify-end items-center w-full mt-5 
@@ -33,7 +36,9 @@ function DropDownlist() {
             <hr className=" border-1 height-[1px] w-[70%]" />
           </div>
           <li className="li">
-            <p className="text text-lg">登出</p>
+            <p onClick={() => signOut()} className="text text-lg">
+              登出
+            </p>
           </li>
         </ul>
       </div>

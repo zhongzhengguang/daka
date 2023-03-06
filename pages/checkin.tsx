@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar/Navbar';
 import Date from '@/components/Time/Date';
-import CheckButton from '@/components/CheckButton';
-import Track from '@/components/Track';
+import Track from '@/components/TrackTable/Track';
 import WorkingTime from '@/components/Time/WorkingTime';
+import { useSession } from 'next-auth/react';
 
 function check() {
   return (

@@ -5,9 +5,8 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 export default function Home() {
   const router = useRouter();
-  const handleGoogleSignIn = async () => {
-    router.push('/checkin');
-  };
+  const session = useSession();
+
   return (
     <div className="flex flex-col items-center h-screen text-center justify-end ">
       <div className="h-[80%] bottom-0 flex flex-col justify-between">
@@ -20,7 +19,7 @@ export default function Home() {
         </div>
         <div className="mx-auto">
           <button
-            onClick={handleGoogleSignIn}
+            onClick={() => signIn()}
             className="px-10 py-2 rounded-xl shadow-lg shadow-gray-400 cursor-pointer flex items-center justify-center space-x-3"
           >
             <Image src={googlelogo} alt="/" />
