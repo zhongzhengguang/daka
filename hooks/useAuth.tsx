@@ -16,9 +16,7 @@ function AuthProvider({ children }: AuthProviderProps) {
   const router = useRouter();
 
   useEffect(() => {
-    if (session.status == 'authenticated') {
-      router.push('/');
-    } else if (session.status == 'unauthenticated') {
+    if (session.status == 'unauthenticated') {
       router.push('/login');
     }
   }, [session.status]);

@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.textNotoSans {
+  font-family: 'Noto Sans', sans-serif;
+}
 @layer components {
   .textDarkBlue {
     @apply text-[#223C52];
@@ -20,6 +22,12 @@
   }
   .li {
     @apply flex items-center ml-10 space-x-5 cursor-pointer;
+  }
+  .navbarli {
+    @apply flex flex-col justify-center items-center space-y-5;
+  }
+  .navbarlidiv {
+    @apply rounded-full px-5 py-4;
   }
   .checkin {
     @apply rounded-2xl text-white bg-[#48A7EE] cursor-pointer;

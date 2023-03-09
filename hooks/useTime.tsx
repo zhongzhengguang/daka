@@ -17,6 +17,18 @@ type TimeContextProps = {
   handleChoose: () => void;
   Office: () => void;
   Remote: () => void;
+  timeCard: boolean;
+  setTimeCard: React.Dispatch<React.SetStateAction<boolean>>;
+  finishTimeCard: boolean;
+  setFinishTimeCard: React.Dispatch<React.SetStateAction<boolean>>;
+  hourValue: number;
+  setHourValue: React.Dispatch<React.SetStateAction<number>>;
+  minuteValue: number;
+  setMinuteValue: React.Dispatch<React.SetStateAction<number>>;
+  finishHourValue: number;
+  setFinishHourValue: React.Dispatch<React.SetStateAction<number>>;
+  finishMinuteValue: number;
+  setFinishMinuteValue: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const TimeContext = createContext<TimeContextProps>({
@@ -35,6 +47,19 @@ export const TimeContext = createContext<TimeContextProps>({
   handleChoose: () => {},
   Office: () => {},
   Remote: () => {},
+
+  timeCard: false,
+  setTimeCard: () => {},
+  finishTimeCard: false,
+  setFinishTimeCard: () => {},
+  hourValue: 9,
+  setHourValue: () => {},
+  minuteValue: 0,
+  setMinuteValue: () => {},
+  finishHourValue: 9,
+  setFinishHourValue: () => {},
+  finishMinuteValue: 0,
+  setFinishMinuteValue: () => {},
 });
 
 interface TimeProviderProps {
@@ -49,6 +74,12 @@ function TimeProvider({ children }: TimeProviderProps) {
   const [card, setCard] = useState<boolean>(false);
   const [dropDownList, setDropDownList] = useState(false);
   const [workPlace, setWorPlace] = useState('Office');
+  const [timeCard, setTimeCard] = useState(false);
+  const [finishTimeCard, setFinishTimeCard] = useState(false);
+  const [hourValue, setHourValue] = useState(9);
+  const [minuteValue, setMinuteValue] = useState(0);
+  const [finishHourValue, setFinishHourValue] = useState(9);
+  const [finishMinuteValue, setFinishMinuteValue] = useState(0);
 
   const handleChoose = () => {
     setDropDownList(!dropDownList);
@@ -98,6 +129,18 @@ function TimeProvider({ children }: TimeProviderProps) {
         handleChoose,
         Office,
         Remote,
+        timeCard,
+        setTimeCard,
+        finishTimeCard,
+        setFinishTimeCard,
+        hourValue,
+        setHourValue,
+        minuteValue,
+        setMinuteValue,
+        finishHourValue,
+        setFinishHourValue,
+        finishMinuteValue,
+        setFinishMinuteValue,
       }}
     >
       {children}

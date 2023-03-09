@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import userphoto from '../../public/checkpage/userphoto.png';
 import Image from 'next/image';
 import VectorDown from '../../public/checkpage/VectorDown.png';
 import VectorUp from '../../public/checkpage/VectorUp.png';
 import DropDownlist from '@/components/Navbar/DropDownlist';
-import { UserData } from '../../types';
 import { useSession } from 'next-auth/react';
 function Navbar() {
   const [dropdownList, setDropDownList] = useState(false);

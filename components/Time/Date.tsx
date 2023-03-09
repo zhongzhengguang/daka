@@ -1,18 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import moment from 'moment';
-
 import 'moment/locale/zh-cn';
+import { TimeContext } from 'hooks/useTime';
 function Date() {
-  const [currentTime, setCurrentTime] = useState(moment());
-
-  useEffect(() => {
-    const timerID = setInterval(() => {
-      setCurrentTime(moment());
-    }, 1000);
-    return () => clearInterval(timerID);
-  }, []);
-
-  // moment.locale('zh-cn');
+  const { currentTime } = useContext(TimeContext);
 
   return (
     <div className="flex flex-col items-center text-center mt-[10vh]">

@@ -7,6 +7,7 @@ import personalfile from '../../public/checkpage/personalfile.png';
 import { useRouter } from 'next/router';
 import { signOut } from 'next-auth/react';
 function DropDownlist() {
+  const router = useRouter();
   return (
     <div
       className="flex justify-end items-center w-full mt-5 
@@ -16,7 +17,14 @@ function DropDownlist() {
         <ul className="space-y-10 mt-10 mb-10">
           <li className="li">
             <Image src={personalLeave} alt="/" />
-            <p className="text">我要請假</p>
+            <p
+              onClick={() => {
+                router.push('/personalLeave');
+              }}
+              className="text"
+            >
+              我要請假
+            </p>
           </li>
           <li className="li">
             <Image src={personalLeaveHistory} alt="/" />

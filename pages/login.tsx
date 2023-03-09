@@ -4,7 +4,10 @@ import googlelogo from '../public/googlelogo.png';
 import { useSession, signIn } from 'next-auth/react';
 import Footer from '@/components/Footer/Footer';
 import loginbg from '../public/loginbg.png';
+import { useRouter } from 'next/router';
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col items-center h-screen text-center justify-end">
       <Image src={loginbg} alt="loginbg" className="backgroundImage h-screen" />
@@ -18,7 +21,7 @@ export default function Home() {
         </div>
         <div className="mx-auto">
           <button
-            onClick={() => signIn()}
+            onClick={() => signIn}
             className="px-10 py-2 rounded-xl shadow-lg shadow-gray-400 cursor-pointer flex items-center justify-center space-x-3"
           >
             <Image src={googlelogo} alt="/" />
