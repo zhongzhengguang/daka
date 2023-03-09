@@ -1,6 +1,6 @@
 declare module '*module.css' {
   const styles: {
-    [className: string]: string;
+    [className: string | number]: string | number;
   };
   export default styles;
 }
@@ -8,6 +8,7 @@ declare module '*module.css' {
 export interface UserData {
   users: Users[];
 }
-interface Users {
+export interface Users {
+  id: string;
   users: [id: string, name: string, email: string, emailVerified: null, image: string];
 }

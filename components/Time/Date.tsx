@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import Timer from './Timer';
+
 import 'moment/locale/zh-cn';
 function Date() {
   const [currentTime, setCurrentTime] = useState(moment());
@@ -29,7 +29,6 @@ function Date() {
             {currentTime.format('HH:mm') >= '12:00' ? 'PM' : 'AM'}
           </span>
         </div>
-        <Timer />
       </div>
     </div>
   );

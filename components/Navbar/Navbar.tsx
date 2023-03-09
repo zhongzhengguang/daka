@@ -14,12 +14,14 @@ function Navbar() {
   const { data: session } = useSession();
 
   return (
-    <div className=" mt-10 mx-5">
+    <div className=" pt-10 mx-5">
       <div className="flex justify-between items-center">
         <p className="text cursor-pointer">忘記打卡？</p>
         <div onClick={handleDropDown} className=" flex items-center space-x-2 cursor-pointer">
           {session && (
-            <img
+            <Image
+              width={50}
+              height={50}
               src={session?.user?.image!}
               alt="/"
               className="h-10 w-10 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50"

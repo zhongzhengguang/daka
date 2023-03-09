@@ -1,15 +1,13 @@
 import Image from 'next/image';
 import LOGO from '../public/LOGO.png';
 import googlelogo from '../public/googlelogo.png';
-import { useSession, signIn, signOut } from 'next-auth/react';
-import { useRouter } from 'next/router';
+import { useSession, signIn } from 'next-auth/react';
 import Footer from '@/components/Footer/Footer';
+import loginbg from '../public/loginbg.png';
 export default function Home() {
-  const router = useRouter();
-  const session = useSession();
-
   return (
-    <div className="flex flex-col items-center h-screen text-center justify-end ">
+    <div className="flex flex-col items-center h-screen text-center justify-end">
+      <Image src={loginbg} alt="loginbg" className="backgroundImage h-screen" />
       <div className="h-[80%] bottom-0 flex flex-col justify-between">
         <div className="space-y-3">
           <Image src={LOGO} alt="/" className="mx-auto" />

@@ -7,8 +7,6 @@ import personalfile from '../../public/checkpage/personalfile.png';
 import { useRouter } from 'next/router';
 import { signOut } from 'next-auth/react';
 function DropDownlist() {
-  const router = useRouter();
-
   return (
     <div
       className="flex justify-end items-center w-full mt-5 

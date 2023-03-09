@@ -22,15 +22,18 @@
     @apply flex items-center ml-10 space-x-5 cursor-pointer;
   }
   .checkin {
-    @apply border rounded-2xl text-white px-20 py-5 bg-[#48A7EE];
+    @apply rounded-2xl text-white bg-[#48A7EE] cursor-pointer;
   }
   .checkout {
-    @apply border rounded-2xl text-white px-20 py-5 bg-[#223C52];
+    @apply rounded-2xl text-white bg-[#223C52] cursor-pointer;
   }
   .track {
     @apply bg-[#F3F6F8] rounded-xl space-y-5;
   }
   .trackLi {
     @apply flex items-center space-x-5;
+  }
+  .backgroundImage {
+    @apply absolute z-[-1] w-screen object-cover;
   }
 }
