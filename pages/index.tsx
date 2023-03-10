@@ -19,6 +19,7 @@ export default function Home({ userData }: Props) {
   const { currentTime, setCurrentTime } = useContext(TimeContext);
 
   const { card } = useContext(TimeContext);
+
   return (
     <>
       <Head>
@@ -27,9 +28,9 @@ export default function Home({ userData }: Props) {
       </Head>
       <div>
         {currentTime.format('HH:mm') > '18:00' ? (
-          <Image src={checkout} alt="checkout" className="backgroundImage" />
+          <Image src={checkout} alt="Night" className="backgroundImage" />
         ) : (
-          <Image src={checkin} alt="checkin" className="backgroundImage" />
+          <Image src={checkin} alt="Mornning" className="backgroundImage" />
         )}
         {card && <WhereAreYouWorkCard />}
         <Navbar />

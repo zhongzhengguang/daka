@@ -1,6 +1,9 @@
 import React, { createContext, useEffect, useState } from 'react';
 import moment from 'moment';
 import { useSession } from 'next-auth/react';
+import { da } from 'date-fns/locale';
+import { useLocalStorage } from './useLocalStorage';
+
 type TimeContextProps = {
   currentTime: moment.Moment;
   setCurrentTime: React.Dispatch<React.SetStateAction<moment.Moment>>;
@@ -70,7 +73,8 @@ function TimeProvider({ children }: TimeProviderProps) {
   const { data: session } = useSession();
   const [currentTime, setCurrentTime] = useState(moment());
   const [seconds, setSeconds] = useState<number>(0);
-  const [isRunning, setIsRunning] = useState<boolean>(false);
+
+  const [isRunning, setIsRunning] = useLocalStorage<boolean>('isRunning', false);
   const [card, setCard] = useState<boolean>(false);
   const [dropDownList, setDropDownList] = useState(false);
   const [workPlace, setWorPlace] = useState('Office');
@@ -102,14 +106,14 @@ function TimeProvider({ children }: TimeProviderProps) {
 
   useEffect(() => {
     const elapsedSeconds: NodeJS.Timeout | null =
-      isRunning && seconds < 28800
+      seconds < 28800
         ? setInterval(() => {
             setSeconds((prevSeconds) => prevSeconds + 1);
           }, 1000)
         : null;
 
     return (): void => clearInterval(elapsedSeconds as NodeJS.Timeout);
-  }, [isRunning, seconds]);
+  }, [seconds]);
 
   return (
     <TimeContext.Provider

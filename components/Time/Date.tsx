@@ -6,7 +6,7 @@ function Date() {
   const { currentTime } = useContext(TimeContext);
 
   return (
-    <div className="flex flex-col items-center text-center mt-[10vh]">
+    <div className="flex flex-col items-center text-center ">
       <div className="bottom-0 flex flex-col justify-between ">
         <div className="textDarkBlue text-xl">
           <span>{currentTime.format('YYYY')} 年</span>

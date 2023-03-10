@@ -1,8 +1,8 @@
 import { TimeContext } from 'hooks/useTime';
 import React, { useContext, useState } from 'react';
 import Image from 'next/image';
-import VectorDown from '../public/checkpage/VectorDown.png';
-import VectorUp from '../public/checkpage/VectorUp.png';
+import VectorDown from '../../public/checkpage/VectorDown.png';
+import VectorUp from '../../public/checkpage/VectorUp.png';
 import 'moment/locale/zh-cn';
 function HalfDay() {
   const {

@@ -38,7 +38,7 @@ function PersonalLeaveNavbar() {
   return (
     <div>
       <Image src={whitebg} alt="whitebg" className="backgroundImage" />
-      <div className=" flex justify-between pt-10 px-5 w-[400px]">
+      <div className=" flex justify-between pt-10 px-5">
         <Link href="/">
           <Image src={left} alt="left" />
         </Link>
@@ -46,7 +46,7 @@ function PersonalLeaveNavbar() {
         <div />
       </div>
 
-      <ul className=" flex justify-between items-center mt-20 px-5">
+      <ul className=" flex justify-between items-center mt-10 px-5">
         {holidays.map((holiday) => (
           <li className="navbarli" key={holiday.id}>
             <div className={`${holiday.bg} navbarlidiv`}>

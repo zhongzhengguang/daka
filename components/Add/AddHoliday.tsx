@@ -7,23 +7,27 @@ function AddHoliday() {
     {
       id: 1,
       EachLeave: '特休',
+      underline: true,
     },
     {
       id: 2,
       EachLeave: '病假',
+      underline: true,
     },
     {
       id: 3,
       EachLeave: '陪產假',
-      bg: 'bg-[#F3F6F8]',
+      underline: true,
     },
     {
       id: 4,
       EachLeave: '事假',
+      underline: true,
     },
     {
       id: 5,
       EachLeave: '事假',
+      underline: false,
     },
   ];
   const handleaddHoliday = (eachLeave: string) => {
@@ -31,11 +35,11 @@ function AddHoliday() {
     setAddHolidayDropDownList(false);
   };
   return (
-    <div className="relative flex flex-col items-center">
+    <div className="relative flex flex-col items-center mt-20">
       <h1>我要請假</h1>
       <button
         onClick={() => setAddHolidayDropDownList(!addHolidayDropDownList)}
-        className="bg-white rounded-lg flex justify-between w-[400px] p-3 mt-10"
+        className="bg-white rounded-lg flex justify-between w-[400px] p-3 mt-10 mx-2"
       >
         <div>
           <span className="text-[#868A93]">狀態</span>
@@ -44,7 +48,7 @@ function AddHoliday() {
         <div className="textDarkBlue">{addHoliday}</div>
       </button>
       {addHolidayDropDownList && (
-        <div className="bg-white rounded-lg flex flex-col justify-between space-y-2 w-[80%] py-3 px-2 absolute top-[130px] z-10">
+        <div className="bg-white rounded-lg flex flex-col justify-between space-y-2 w-[400px] py-3 px-2 absolute top-[120px] z-10">
           {EachHolidays.map((addHoliday) => (
             <div key={addHoliday.id}>
               <button className=" flex justify-center items-center w-full">
@@ -52,7 +56,7 @@ function AddHoliday() {
                   {addHoliday.EachLeave}
                 </div>
               </button>
-              <div className="border border-[#d6d8dd] w-full h-[1px]" />
+              {addHoliday.underline && <div className="border border-[#edeef0] w-full h-[1px]" />}
             </div>
           ))}
         </div>

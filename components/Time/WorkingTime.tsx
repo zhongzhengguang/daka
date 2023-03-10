@@ -2,23 +2,7 @@ import TimeProvider, { TimeContext } from 'hooks/useTime';
 import React, { useState, useEffect, useContext } from 'react';
 
 const WorkingTime = () => {
-  const {
-    currentTime,
-    setCurrentTime,
-    seconds,
-    setSeconds,
-    isRunning,
-    setIsRunning,
-    card,
-    setCard,
-    dropDownList,
-    setDropDownList,
-    workPlace,
-    setWorPlace,
-    handleChoose,
-    Office,
-    Remote,
-  } = useContext(TimeContext);
+  const { seconds, setSeconds, isRunning, setIsRunning, card, setCard } = useContext(TimeContext);
 
   const handleOpenCard = () => {
     setCard(!card);
@@ -39,13 +23,11 @@ const WorkingTime = () => {
     const hour = Math.floor(seconds / 3600);
     const minute = Math.floor((seconds % 3600) / 60);
     const second = seconds % 60;
-    return `您已工作 ${hour.toString().padStart(2, '0')} 小時 ${minute.toString().padStart(2, '0')} 分鐘  ${second
-      .toString()
-      .padStart(2, '0')} 秒`;
+    return `您已工作 ${hour.toString().padStart(2, '0')} 小時 ${minute.toString().padStart(2, '0')} 分鐘  `;
   };
   // 如果想測試吃入秒數的話
   //   ${second.toString().padStart(2, '0')} 秒
-  const TimePercentage: number = (seconds / 60) * 100;
+  const TimePercentage: number = (seconds / 28800) * 100;
 
   return (
     <div className="flex flex-col items-center space-y-4 mt-10">

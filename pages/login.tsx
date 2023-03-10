@@ -21,7 +21,7 @@ export default function Home() {
         </div>
         <div className="mx-auto">
           <button
-            onClick={() => signIn}
+            onClick={() => signIn()}
             className="px-10 py-2 rounded-xl shadow-lg shadow-gray-400 cursor-pointer flex items-center justify-center space-x-3"
           >
             <Image src={googlelogo} alt="/" />
