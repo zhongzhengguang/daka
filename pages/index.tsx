@@ -12,11 +12,14 @@ import checkout from '../public/checkoutbg.png';
 import Image from 'next/image';
 import WhereAreYouWorkCard from '@/components/WhereAreYouWorkCard/WhereAreYouWorkCard';
 import { TimeContext } from 'hooks/useTime';
+import { useSession } from 'next-auth/react';
 interface Props {
   userData: UserData;
 }
 export default function Home({ userData }: Props) {
   const { currentTime, setCurrentTime } = useContext(TimeContext);
+  const session = useSession();
+  // console.log(session.data?.user);
 
   const { card } = useContext(TimeContext);
 
@@ -36,7 +39,7 @@ export default function Home({ userData }: Props) {
         <Navbar />
         <Date />
         <WorkingTime />
-        <p className="textGray flex justify-center mt-10">Kiitzu的小夥伴們</p>
+        <p className="textGray mt-10 flex justify-center">Kiitzu的小夥伴們</p>
         <Track users={userData.users} />
         <Footer />
       </div>

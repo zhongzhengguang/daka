@@ -5,11 +5,15 @@ import { UserData } from '../../types';
 
 function Track({ users }: UserData) {
   return (
-    <div className=" flex flex-col justify-center items-center mt-10 ">
+    <div className=" mt-10 flex flex-col items-center justify-center ">
       <ul className="track p-5">
-        {users.map((user) => (
-          <EachUser user={user} key={user.id} />
-        ))}
+        {users ? (
+          <div>
+            {users.map((user) => (
+              <EachUser user={user} key={user.id} />
+            ))}
+          </div>
+        ) : null}
       </ul>
     </div>
   );

@@ -33,17 +33,17 @@ function WhereAreYouWorkCard() {
   };
 
   return (
-    <div className="flex flex-col justify-center w-screen h-screen items-center absolute bg-black/[0.65]">
-      <div className="bg-[#F3F6F8] rounded-lg h-[40vh] w-[368px] relative z-50 ">
+    <div className="absolute flex h-screen w-screen flex-col items-center justify-center bg-black/[0.65]">
+      <div className="relative z-50 h-[40vh] w-[368px] rounded-lg bg-[#F3F6F8] ">
         {checkinSuccess ? (
-          <div className="flex flex-col justify-center h-full  items-center">
+          <div className="flex h-full flex-col items-center  justify-center">
             <h1 className=" textDarkBlue text-xl font-bold">您已成功打卡上班！</h1>
             <p className=" textDarkBlue">今天又是努力賺錢錢的一天💰</p>
           </div>
         ) : (
-          <div className="flex flex-col justify-center h-full  items-center">
+          <div className="flex h-full flex-col items-center  justify-center">
             <h1 className="textDarkBlue text-xl">你今天在哪裡上班？</h1>
-            <button onClick={handleChoose} className="bg-white rounded-lg flex justify-between w-[80%] p-3 mt-10">
+            <button onClick={handleChoose} className="mt-10 flex w-[80%] justify-between rounded-lg bg-white p-3">
               <div>
                 <span className="text-[#868A93]">狀態</span>
                 <a className="text-[#D15050]">*</a>
@@ -51,11 +51,11 @@ function WhereAreYouWorkCard() {
               <div className="textDarkBlue">{workPlace}</div>
             </button>
             {dropDownList ? (
-              <div className="bg-white rounded-lg flex flex-col justify-between items-center space-y-2 w-[80%] py-3 px-2 mt-2 ">
+              <div className="mt-2 flex w-[80%] flex-col items-center justify-between space-y-2 rounded-lg bg-white py-3 px-2 ">
                 <button onClick={Office}>
                   <div className="textDarkBlue">Office</div>
                 </button>
-                <div className="border border-[#d6d8dd] w-[80%] h-[1px]" />
+                <div className="h-[1px] w-[80%] border border-[#d6d8dd]" />
                 <button onClick={Remote}>
                   <div className="textDarkBlue">Remote</div>
                 </button>
