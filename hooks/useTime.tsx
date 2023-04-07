@@ -105,15 +105,17 @@ function TimeProvider({ children }: TimeProviderProps) {
   }, []);
 
   useEffect(() => {
-    const elapsedSeconds: NodeJS.Timeout | null =
-      seconds < 28800
-        ? setInterval(() => {
-            setSeconds((prevSeconds) => prevSeconds + 1);
-          }, 1000)
-        : null;
+    if (isRunning) {
+      const elapsedSeconds: NodeJS.Timeout | null =
+        seconds < 28800
+          ? setInterval(() => {
+              setSeconds((prevSeconds) => prevSeconds + 1);
+            }, 1000)
+          : null;
 
-    return (): void => clearInterval(elapsedSeconds as NodeJS.Timeout);
-  }, [seconds]);
+      return (): void => clearInterval(elapsedSeconds as NodeJS.Timeout);
+    }
+  }, [isRunning, seconds]);
 
   return (
     <TimeContext.Provider

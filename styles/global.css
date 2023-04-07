@@ -21,22 +21,22 @@
     @apply text-[#868A93] underline underline-offset-4;
   }
   .li {
-    @apply flex items-center ml-10 space-x-5 cursor-pointer;
+    @apply ml-10 flex cursor-pointer items-center space-x-5;
   }
   .navbarli {
-    @apply flex flex-col justify-center items-center space-y-5;
+    @apply flex flex-col items-center justify-center space-y-5;
   }
   .navbarlidiv {
     @apply rounded-full px-5 py-4;
   }
   .checkin {
-    @apply rounded-2xl text-white bg-[#48A7EE] cursor-pointer;
+    @apply cursor-pointer rounded-2xl bg-[#48A7EE] text-white;
   }
   .checkout {
-    @apply rounded-2xl text-white bg-[#223C52] cursor-pointer;
+    @apply cursor-pointer rounded-2xl bg-[#223C52] text-white;
   }
   .track {
-    @apply bg-[#F3F6F8] rounded-xl space-y-5;
+    @apply space-y-5 rounded-xl bg-[#F3F6F8];
   }
   .trackLi {
     @apply flex items-center space-x-5;

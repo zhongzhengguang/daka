@@ -17,11 +17,24 @@ interface Props {
   userData: UserData;
 }
 export default function Home({ userData }: Props) {
-  const { currentTime, setCurrentTime } = useContext(TimeContext);
   const session = useSession();
   // console.log(session.data?.user);
 
-  const { card } = useContext(TimeContext);
+  const {
+    currentTime,
+    setCurrentTime,
+    setCard,
+    card,
+    seconds,
+    setSeconds,
+    isRunning,
+    setIsRunning,
+    dropDownList,
+    workPlace,
+    handleChoose,
+    Office,
+    Remote,
+  } = useContext(TimeContext);
 
   return (
     <>

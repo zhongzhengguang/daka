@@ -2,13 +2,14 @@ import TimeProvider, { TimeContext } from 'hooks/useTime';
 import React, { useState, useEffect, useContext } from 'react';
 
 const WorkingTime = () => {
-  const { seconds, setSeconds, isRunning, setIsRunning, card, setCard } = useContext(TimeContext);
+  const { seconds, setSeconds, isRunning, setIsRunning, card, setCard, workPlace } = useContext(TimeContext);
+  // console.log(isRunning);
 
   const handleOpenCard = () => {
     setCard(!card);
   };
 
-  const handleStop = () => {
+  const handleStop = async () => {
     setIsRunning(!isRunning);
     if (!isRunning) {
       setSeconds(0);
@@ -23,18 +24,18 @@ const WorkingTime = () => {
     const hour = Math.floor(seconds / 3600);
     const minute = Math.floor((seconds % 3600) / 60);
     const second = seconds % 60;
-    return `您已工作 ${hour.toString().padStart(2, '0')} 小時 ${minute.toString().padStart(2, '0')} 分鐘  `;
+    return `您已工作 ${hour.toString().padStart(2, '0')} 小時 ${minute.toString().padStart(2, '0')} 分鐘`;
   };
   // 如果想測試吃入秒數的話
   //   ${second.toString().padStart(2, '0')} 秒
   const TimePercentage: number = (seconds / 28800) * 100;
 
   return (
-    <div className="flex flex-col items-center space-y-4 mt-10">
+    <div className="mt-10 flex flex-col items-center space-y-4">
       <div className="textGray flex">{formatTime(seconds)}</div>
-      <div className="w-80 h-3 bg-gray-200 rounded-full flex items-center p-2">
+      <div className="flex h-3 w-80 items-center rounded-full bg-gray-200 p-2">
         <div
-          className="h-2 bg-[#48A7EE] rounded-full"
+          className="h-2 rounded-full bg-[#48A7EE]"
           style={{ width: `${TimePercentage}%` }}
           role="progressbar"
           aria-valuenow={seconds}

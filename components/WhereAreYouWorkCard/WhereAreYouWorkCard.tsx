@@ -1,7 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { TimeContext } from 'hooks/useTime';
-
+import { useSession } from 'next-auth/react';
 function WhereAreYouWorkCard() {
+  const session = useSession();
+  const name = session?.data?.user?.name;
+  const email = session?.data?.user?.email;
+
   const [checkinSuccess, setCheckinSuccess] = useState(false);
   const {
     setCard,
@@ -17,7 +21,7 @@ function WhereAreYouWorkCard() {
     Remote,
   } = useContext(TimeContext);
 
-  const handleStart = () => {
+  const handleStart = async () => {
     setIsRunning(!isRunning);
     setCheckinSuccess(!checkinSuccess);
     if (!isRunning) {
@@ -30,6 +34,23 @@ function WhereAreYouWorkCard() {
     setTimeout(() => {
       setCard(!card);
     }, 800);
+    const startWorkData = {
+      type: workPlace,
+      inTime: new Date(),
+      outTime: null,
+    };
+
+    const res = await fetch('api/punch', {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      body: JSON.stringify(startWorkData),
+    });
+    const { status, message, data } = await res.json();
+    if (status !== 200) {
+      return { status, message };
+    }
+
+    return { data, message: '200' };
   };
 
   return (
